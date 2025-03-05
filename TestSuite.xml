@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "TestSuite" parallel = "false" verbose = "1" >
+	<listeners>
+		<listener class-name = "framework.listeners.TestListener"/>
+	</listeners>
+
+	<!--
+		1. Navigate to Login page URL.
+		2. Validate login in Facebook.
+	-->
+	<test name = "Application Login" preserve-order = "true">
+		<classes>
+			<class name = "framework.testcases.LoginValidate">
+				<methods>
+					<include name = "navigateToLoginPage"/>
+					<include name = "verifyLogin"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
